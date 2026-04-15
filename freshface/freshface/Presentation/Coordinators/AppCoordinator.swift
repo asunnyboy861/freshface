@@ -5,14 +5,33 @@ class AppCoordinator: ObservableObject {
     @Published var selectedProduct: Product?
     @Published var showAddProduct = false
     @Published var showScanner = false
-    
+
+    private lazy var localProductRepository: ProductRepositoryProtocol = LocalProductRepository()
+    private lazy var cloudProductRepository: ProductRepositoryProtocol = CloudProductRepository()
+    private lazy var localRoutineRepository: RoutineRepositoryProtocol = LocalRoutineRepository()
+    private lazy var cloudRoutineRepository: RoutineRepositoryProtocol = CloudRoutineRepository()
+
+    var productRepository: ProductRepositoryProtocol {
+        if UserDefaults.standard.bool(forKey: "iCloudSyncEnabled") {
+            return cloudProductRepository
+        }
+        return localProductRepository
+    }
+
+    var routineRepository: RoutineRepositoryProtocol {
+        if UserDefaults.standard.bool(forKey: "iCloudSyncEnabled") {
+            return cloudRoutineRepository
+        }
+        return localRoutineRepository
+    }
+
     enum AppTab: String, CaseIterable {
         case home = "Home"
         case products = "Products"
         case routine = "Routine"
         case analytics = "Analytics"
         case settings = "Settings"
-        
+
         var icon: String {
             switch self {
             case .home: return "house.fill"
@@ -23,15 +42,15 @@ class AppCoordinator: ObservableObject {
             }
         }
     }
-    
+
     func selectProduct(_ product: Product) {
         selectedProduct = product
     }
-    
+
     func clearSelection() {
         selectedProduct = nil
     }
-    
+
     func navigate(to tab: AppTab) {
         withAnimation(.easeInOut(duration: 0.3)) {
             selectedTab = tab

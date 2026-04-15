@@ -45,7 +45,7 @@ struct BarcodeScannerView: View {
             } message: {
                 Text("FreshFace needs camera access to scan product barcodes. Please enable camera access in Settings.")
             }
-            .onChange(of: scannerService.scannedCode) { newValue in
+            .onChange(of: scannerService.scannedCode) { _, newValue in
                 if let code = newValue {
                     onBarcodeScanned(code)
                     dismiss()

@@ -16,7 +16,7 @@ struct ProductListView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         ProductSortMenu(selectedOption: $viewModel.sortOption)
-                            .onChange(of: viewModel.sortOption) { _ in
+                            .onChange(of: viewModel.sortOption) { _, _ in
                                 viewModel.applyFilterAndSort()
                             }
                     }
@@ -39,7 +39,7 @@ struct ProductListView: View {
                     }
                 }
                 .searchable(text: $searchText, prompt: "Search products")
-                .onChange(of: searchText) { newValue in
+                .onChange(of: searchText) { _, newValue in
                     viewModel.searchProducts(query: newValue)
                 }
                 .refreshable {
@@ -93,7 +93,7 @@ struct ProductListView: View {
 
     private var filterSection: some View {
         ProductFilterBar(selectedCategory: $viewModel.currentFilterCategory)
-            .onChange(of: viewModel.currentFilterCategory) { _ in
+            .onChange(of: viewModel.currentFilterCategory) { _, _ in
                 viewModel.applyFilterAndSort()
             }
             .padding(.vertical, 8)

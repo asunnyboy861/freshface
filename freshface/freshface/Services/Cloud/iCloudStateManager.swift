@@ -60,6 +60,8 @@ class iCloudStateManager: ObservableObject {
                 status = .notConfigured
             case .restricted, .temporarilyUnavailable:
                 status = .unavailable
+            case .couldNotDetermine:
+                status = .unavailable
             @unknown default:
                 status = .unavailable
             }

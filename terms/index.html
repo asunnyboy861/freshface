@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFace - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #fff5f7 0%, #fff 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF8FAB 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+        
+        .logo svg {
+            width: 48px;
+            height: 48px;
+            fill: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .last-updated {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section h2 {
+            color: #FF6B9D;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+        }
+        
+        .section p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .section ul, .section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .section li {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #FF6B9D;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            color: #333;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box p {
+            margin: 0;
+            color: #856404;
+        }
+        
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .term-card {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        
+        .term-card h4 {
+            color: #FF6B9D;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .term-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF8FAB 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .contact-card h2 {
+            color: white;
+            justify-content: center;
+        }
+        
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .email-link {
+            display: inline-block;
+            background: white;
+            color: #FF6B9D;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .email-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: #FF6B9D;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="subtitle">Please read these terms carefully before using FreshFace</p>
+            <p class="last-updated">Last Updated: April 15, 2026</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Agreement to Terms
+            </h2>
+            <p>By downloading, installing, or using FreshFace ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+            <p>These Terms constitute a legally binding agreement between you and FreshFace regarding your use of the App.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Description of Service
+            </h2>
+            <p>FreshFace is a mobile application designed to help you:</p>
+            <ul>
+                <li>Track expiration dates of your skincare and beauty products</li>
+                <li>Manage your skincare routines</li>
+                <li>Analyze product ingredients</li>
+                <li>Receive reminders about product expiry</li>
+                <li>Sync your data across devices using iCloud</li>
+            </ul>
+            <p>We reserve the right to modify, suspend, or discontinue any feature of the App at any time without notice.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                User Responsibilities
+            </h2>
+            
+            <div class="terms-grid">
+                <div class="term-card">
+                    <h4>
+                        <svg class="icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Accurate Information
+                    </h4>
+                    <p>Provide accurate product information when adding items to track</p>
+                </div>
+                <div class="term-card">
+                    <h4>
+                        <svg class="icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Proper Use
+                    </h4>
+                    <p>Use the App only for its intended purpose</p>
+                </div>
+                <div class="term-card">
+                    <h4>
+                        <svg class="icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Compliance
+                    </h4>
+                    <p>Comply with all applicable laws and regulations</p>
+                </div>
+                <div class="term-card">
+                    <h4>
+                        <svg class="icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                        Account Security
+                    </h4>
+                    <p>Maintain the security of your Apple ID and device</p>
+                </div>
+            </div>
+
+            <h3>Prohibited Activities</h3>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Use the App for any unlawful purpose</li>
+                <li>Attempt to reverse engineer, decompile, or disassemble the App</li>
+                <li>Interfere with or disrupt the App's functionality</li>
+                <li>Use automated systems to access the App</li>
+                <li>Remove or alter any proprietary notices</li>
+                <li>Transfer, sell, or lease your access to the App</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                User Accounts
+            </h2>
+            <p>To use certain features of FreshFace, you may need to:</p>
+            <ul>
+                <li>Sign in with your Apple ID for iCloud sync functionality</li>
+                <li>Grant necessary permissions (notifications, camera for barcode scanning)</li>
+            </ul>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your Apple ID credentials</li>
+                <li>Ensuring accurate data entry in the App</li>
+                <li>All activities that occur under your account</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                </svg>
+                Intellectual Property
+            </h2>
+            <p>All content, features, and functionality of FreshFace are owned by FreshFace and are protected by copyright, trademark, and other intellectual property laws. This includes, but is not limited to:</p>
+            <ul>
+                <li>Text, graphics, logos, and icons</li>
+                <li>Software code and technology</li>
+                <li>App design and user interface</li>
+                <li>Product databases and ingredient information</li>
+            </ul>
+            <div class="highlight-box">
+                <p>You may not copy, modify, distribute, sell, or lease any part of our App without our prior written permission.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                </svg>
+                Disclaimer of Warranties
+            </h2>
+            <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>Implied warranties of merchantability</li>
+                <li>Fitness for a particular purpose</li>
+                <li>Non-infringement</li>
+                <li>Accuracy or reliability of results</li>
+            </ul>
+            <div class="warning-box">
+                <p><strong>Important:</strong> The App's expiry predictions are estimates based on user-provided data and general guidelines. They should NOT be the sole basis for product safety decisions. Always use your judgment and consult product labels and manufacturers for accurate expiry information.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                Limitation of Liability
+            </h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, FRESHFACE SHALL NOT BE LIABLE FOR:</p>
+            <ul>
+                <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of data, profits, or business opportunities</li>
+                <li>Any damages arising from reliance on product expiry information</li>
+                <li>Any damages resulting from unauthorized access to your data</li>
+                <li>Any damages resulting from service interruptions</li>
+            </ul>
+            <p>In no event shall our total liability exceed the amount you paid for the App (if any).</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                Third-Party Services
+            </h2>
+            <p>FreshFace uses the following third-party services:</p>
+            <ul>
+                <li><strong>Apple iCloud:</strong> For data synchronization across your devices. Your use of iCloud is subject to Apple's Terms of Service and Privacy Policy.</li>
+            </ul>
+            <p>We are not responsible for the practices of third-party services. Please review their terms and privacy policies.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                </svg>
+                App Store Terms
+            </h2>
+            <p>Your use of FreshFace is also subject to the Apple App Store Terms of Service. In the event of any conflict between these Terms and the App Store Terms, the App Store Terms shall prevail.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                    <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                Changes to Terms
+            </h2>
+            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to this page. Your continued use of the App after any changes constitutes acceptance of the new Terms.</p>
+            <p>We encourage you to review these Terms periodically. The "Last Updated" date at the top indicates when the Terms were last revised.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Termination
+            </h2>
+            <p>We may terminate or suspend your access to the App immediately, without prior notice or liability, for any reason, including:</p>
+            <ul>
+                <li>Breach of these Terms</li>
+                <li>Conduct that we believe is harmful to other users or the App</li>
+                <li>Legal requirements</li>
+            </ul>
+            <p>Upon termination, your right to use the App will immediately cease. You may delete the App from your device at any time.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                Governing Law
+            </h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+        </div>
+
+        <div class="section">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                Contact Us
+            </h2>
+            <p>If you have any questions about these Terms of Service, please contact us:</p>
+            <p><strong>Email:</strong> iocompile67692@gmail.com</p>
+        </div>
+
+        <div class="contact-card">
+            <h2>
+                <svg class="icon" style="fill: white;" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Questions?
+            </h2>
+            <p>For any questions about these Terms of Service, please contact us:</p>
+            <a href="mailto:iocompile67692@gmail.com" class="email-link">iocompile67692@gmail.com</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 FreshFace. All rights reserved.</p>
+            <p>These Terms of Service are effective as of April 15, 2026.</p>
+        </div>
+    </div>
+</body>
+</html>

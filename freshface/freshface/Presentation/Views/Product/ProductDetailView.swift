@@ -7,6 +7,8 @@ struct ProductDetailView: View {
     @State private var showLogUsageSheet = false
     @State private var showIngredientAnalysis = false
     @State private var usageLogs: [UsageLog] = []
+    @State private var showShareSheet = false
+    @State private var shareItems: [Any] = []
 
     private let usageLogRepository = CloudUsageLogRepository()
 
@@ -32,6 +34,9 @@ struct ProductDetailView: View {
         }
         .sheet(isPresented: $showIngredientAnalysis) {
             IngredientAnalysisView(product: viewModel.product)
+        }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(activityItems: shareItems)
         }
         .navigationTitle(viewModel.product.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -353,13 +358,40 @@ struct ProductDetailView: View {
     }
     
     private func shareProduct() {
-        let text = "Check out my skincare product: \(viewModel.product.name)"
-        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-        
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootVC = windowScene.windows.first?.rootViewController {
-            rootVC.present(activityVC, animated: true)
+        let product = viewModel.product
+        var shareText = "🧴 \(product.name)"
+
+        if let brand = product.brand {
+            shareText += " by \(brand)"
         }
+
+        shareText += "\n📦 Category: \(product.category.displayName)"
+
+        if let type = product.productType {
+            shareText += "\n🏷️ Type: \(type.displayName)"
+        }
+
+        if let risk = viewModel.riskLevel, let days = viewModel.daysRemaining {
+            let statusEmoji = days <= 0 ? "❌" : days <= 7 ? "⚠️" : "✅"
+            shareText += "\n\(statusEmoji) Status: \(risk.rawValue)"
+
+            if days > 0 {
+                shareText += " (\(days) days remaining)"
+            } else {
+                shareText += " (Expired)"
+            }
+        }
+
+        shareText += "\n\n📱 Tracked with FreshFace"
+
+        var items: [Any] = [shareText]
+
+        if let imageData = product.imageData, let image = UIImage(data: imageData) {
+            items.append(image)
+        }
+
+        shareItems = items
+        showShareSheet = true
     }
 }
 

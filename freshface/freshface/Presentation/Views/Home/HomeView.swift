@@ -11,6 +11,25 @@ struct HomeView: View {
                 .navigationTitle("FreshFace")
                 .navigationBarTitleDisplayMode(.large)
         }
+        .sheet(isPresented: $showAddProduct) {
+            AddProductView(repository: LocalProductRepository())
+                .onDisappear {
+                    viewModel.loadProducts()
+                }
+        }
+        .sheet(isPresented: $showProductGuide) {
+            ContextualHelpView(
+                title: "Adding Products",
+                steps: [
+                    "Tap '+' button on Products tab",
+                    "Choose 'Scan Barcode' or enter manually",
+                    "Fill in product details (name, brand, category)",
+                    "Add photo for visual reference",
+                    "Set expiration date or PAO period",
+                    "Save to start tracking"
+                ]
+            )
+        }
         .onAppear {
             if viewModel.products.isEmpty {
                 viewModel.loadProducts()
@@ -62,22 +81,10 @@ struct HomeView: View {
             showTip: true,
             tipText: "Pro tip: Scan barcodes for quick product entry!"
         )
-        .sheet(isPresented: $showProductGuide) {
-            ContextualHelpView(
-                title: "Adding Products",
-                steps: [
-                    "Tap '+' button on Products tab",
-                    "Choose 'Scan Barcode' or enter manually",
-                    "Fill in product details (name, brand, category)",
-                    "Add photo for visual reference",
-                    "Set expiration date or PAO period",
-                    "Save to start tracking"
-                ]
-            )
-        }
     }
 
     private func navigateToAddProduct() {
+        showAddProduct = true
     }
 
     private var headerSection: some View {

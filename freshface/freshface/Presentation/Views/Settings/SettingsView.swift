@@ -59,7 +59,7 @@ struct SettingsView: View {
             Toggle(isOn: $iCloudSyncEnabled) {
                 Label("Enable iCloud Sync", systemImage: "icloud")
             }
-            .onChange(of: iCloudSyncEnabled) { newValue in
+            .onChange(of: iCloudSyncEnabled) { _, newValue in
                 if newValue {
                     enableICloudSync()
                 } else {
@@ -224,11 +224,11 @@ struct SettingsView: View {
                 }
             }
 
-            NavigationLink(destination: PrivacyPolicyView()) {
+            Link(destination: URL(string: "https://asunnyboy861.github.io/freshface-privacy/")!) {
                 Label("Privacy Policy", systemImage: "hand.raised.fill")
             }
 
-            NavigationLink(destination: TermsOfServiceView()) {
+            Link(destination: URL(string: "https://asunnyboy861.github.io/freshface-terms/")!) {
                 Label("Terms of Service", systemImage: "doc.text.fill")
             }
 

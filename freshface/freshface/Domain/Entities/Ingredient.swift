@@ -119,7 +119,7 @@ struct ProductSafetyScore: Codable {
 
 // MARK: - Ingredient Score Detail
 struct IngredientScoreDetail: Codable, Identifiable {
-    let id = UUID()
+    var id: UUID = UUID()
     let name: String
     let rawText: String
     let score: Int
@@ -155,7 +155,7 @@ struct IngredientParseResult: Codable {
 
 // MARK: - Product Recommendation
 struct ProductRecommendation: Identifiable, Codable {
-    let id = UUID()
+    var id: UUID = UUID()
     let product: Product
     let safetyScore: ProductSafetyScore
     let recommendationReason: String?

@@ -48,7 +48,7 @@ struct RoutineStepEditorView: View {
 
                 Section(header: Text("Step Details")) {
                     TextField("Step Name", text: $stepName)
-                        .onChange(of: selectedProductId) { newValue in
+                        .onChange(of: selectedProductId) { _, newValue in
                             if stepName.isEmpty || step == nil {
                                 if let product = availableProducts.first(where: { $0.id == newValue }) {
                                     stepName = product.name
@@ -106,8 +106,6 @@ struct RoutineStepEditorView: View {
     private func saveStep() {
         let totalWaitSeconds = (waitTimeMinutes * 60) + waitTimeSeconds
         let waitTime: Int? = totalWaitSeconds > 0 ? totalWaitSeconds : nil
-
-        let selectedProduct = availableProducts.first { $0.id == selectedProductId }
 
         let newStep = RoutineStep(
             id: step?.id ?? UUID(),

@@ -212,8 +212,7 @@ class IngredientAnalysisViewModel: ObservableObject {
             updatedProduct.updatedAt = Date()
             
             do {
-                try await productRepository.update(updatedProduct)
-                // Re-analyze with new ingredients
+                _ = try await productRepository.update(updatedProduct)
                 analyze(product: updatedProduct)
             } catch {
                 print("Error saving ingredients: \(error)")
